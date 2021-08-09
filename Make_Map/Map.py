@@ -31,16 +31,20 @@ class Map():
         self.x_length = end_arena_xy[0] - init_arena_xy[0]
         self.y_length = end_arena_xy[1] - init_arena_xy[1]
         self.repeat_and_length = int(self.x_length / x_interval)
+        self.init_arena_x = init_arena_xy[0]
+        self.init_arena_y = init_arena_xy[1]
         if on_off == True:
-            for i in range(self.repeat_and_length):
-                init_grid_xy = [init_arena_xy[0] + x_interval, init_arena_xy[1]]
-                end_grid_xy = [init_arena_xy[0] + x_interval, end_arena_xy[1]]
-                self.line_x = pg.draw.line(screen, color, [init_grid_xy[0], init_grid_xy[1]], [end_grid_xy[0], end_grid_xy[1]], thickness)
+            for i in range(self.repeat_and_length-1):
+                self.init_arena_x += x_interval
+                x_init_grid_xy = [self.init_arena_x, init_arena_xy[1]]
+                x_end_grid_xy = [self.init_arena_x, end_arena_xy[1]]
+                self.line_x = pg.draw.line(screen, color, [x_init_grid_xy[0], x_init_grid_xy[1]], [x_end_grid_xy[0], x_end_grid_xy[1]], thickness)
 
-                # for j in range(self.repeat_and_length):
-                #     init_grid_xy = [init_arena_xy[0], init_arena_xy[1] + self.repeat_and_length]
-                #     end_grid_xy = [end_arena_xy[0], end_arena_xy[1] + self.repeat_and_length]
-                #     self.line_y = pg.draw.line(screen, color, [init_grid_xy[0], init_grid_xy[1]], [end_grid_xy[0], end_grid_xy[1]], thickness)
+                self.init_arena_y += y_interval
+                y_init_grid_xy = [init_arena_xy[0], self.init_arena_y]
+                y_end_grid_xy = [end_arena_xy[0], self.init_arena_y]
+                self.line_y = pg.draw.line(screen, color, [y_init_grid_xy[0], y_init_grid_xy[1]], [y_end_grid_xy[0], y_end_grid_xy[1]], thickness)
+
         else:
             pass
 
