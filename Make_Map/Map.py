@@ -45,7 +45,5 @@ class Map():
                 y_init_grid_xy = [init_arena_xy[0], self.init_arena_y]
                 y_end_grid_xy = [end_arena_xy[0], self.init_arena_y]
                 self.line_y = pg.draw.line(screen, color, [y_init_grid_xy[0], y_init_grid_xy[1]], [y_end_grid_xy[0], y_end_grid_xy[1]], thickness)
-
         else:
             pass
-
