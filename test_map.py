@@ -1,14 +1,17 @@
 import pygame as pg
-import pygame.event
+import math
 
 from Define.Set_Define import *
 from Make_Map import Map
 from Agent import Agent
+from Obstacle import Obstacle
 
 def main():
     get_map = Map.Map()
     get_agent = Agent.Agent()
+    get_Obs = Obstacle.Obstacle()
     screen = get_map.make_window(MAP_SIZE_XY)
+    PI = math.pi
 
 
     done = False
@@ -27,9 +30,13 @@ def main():
         get_agent_move = get_agent.agent_move(get_move)
         get_agent.draw(screen, get_agent_move) # Agent그리기
 
+        # Obstacle_circle
+        get_Obs.circle_draw(screen, C_AXIS_1, C_SIZE_1)
+        get_Obs.circle_draw(screen, C_AXIS_2, C_SIZE_2)
 
-        # Reset()
-        # get_map()
+        # Obstacle_rectangle
+        get_Obs.rectangle_draw(screen, R_AXIS_1, R_SIZE_1)
+        get_Obs.rectangle_draw(screen, R_AXIS_2, R_SIZE_2)
 
         pg.display.flip() # 업데이트
 

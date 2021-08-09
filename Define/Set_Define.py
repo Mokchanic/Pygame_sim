@@ -26,3 +26,17 @@ AGENT_SIZE_XY = [51, 44]
 LINEAR_SPEED = 10
 ROTATE_SPEED =30
 KEY_ON_OFF = True
+
+# Obstacle circle
+C_AXIS_1 = [400, 400]
+C_SIZE_1 = [100, 100]
+
+C_AXIS_2 = [250, 250]
+C_SIZE_2 = [30, 30]
+
+# Obstacle rectangle
+R_AXIS_1 = [300, 300]
+R_AXIS_2 = [400, 50]
+
+R_SIZE_1 = [75, 75]
+R_SIZE_2 = [45, 45]
