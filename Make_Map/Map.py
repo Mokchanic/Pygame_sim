@@ -33,6 +33,7 @@ class Map():
         self.repeat_and_length = int(self.x_length / x_interval)
         self.init_arena_x = init_arena_xy[0]
         self.init_arena_y = init_arena_xy[1]
+
         if on_off == True:
             for i in range(self.repeat_and_length-1):
                 self.init_arena_x += x_interval

@@ -6,7 +6,7 @@ GREEN = (  0, 255,   0)
 RED   = (  0, 255,   0)
 GRAY  = (189, 189, 189)
 
-#Make_Map
+## Make_Map
 MAP_SIZE_XY = [600, 600]
 MAP_FRAME = 10
 #Make_Map_Arena
@@ -19,3 +19,7 @@ X_INTERVAL = 10
 Y_INTERVAL = 10
 GRID_ON_OFF = False
 GRID_THICK = 2
+
+## Agent
+AGENT_XY = [100, 450]
+AGENT_SIZE_XY = [51, 44]
